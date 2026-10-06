@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lighting & Spatial Acoustics — AURA 10D Spatial Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/interiors.css">
+</head>
+<body data-lighting="midnight">
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"><span class="cursor-label">HEAR & SEE</span></div>
+
+  <header class="navbar">
+    <a href="index.html" class="brand-logo" data-cursor-label="HOME">
+      <div class="brand-icon">A</div>
+      <div class="brand-text">AURA <span class="brand-tag">10D SPATIAL</span></div>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="index.html" class="nav-link">Experience</a></li>
+      <li class="nav-item"><a href="living-room.html" class="nav-link">Suites</a></li>
+      <li class="nav-item"><a href="blueprints-plans.html" class="nav-link">Blueprints</a></li>
+      <li class="nav-item"><a href="lighting-acoustics.html" class="nav-link active">Acoustics</a></li>
+      <li class="nav-item"><a href="projects-portfolio.html" class="nav-link">Portfolio</a></li>
+      <li class="nav-item"><a href="cost-calculator.html" class="nav-link">Estimator</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="hud-btn" id="nav-audio-toggle" data-cursor-label="AUDIO">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg>
+        <span>10D AUDIO</span>
+      </button>
+      <a href="contact-booking.html" class="btn-primary" style="padding: 10px 20px; font-size: 0.78rem;">Book Tour</a>
+    </div>
+  </header>
+
+  <main style="padding-top: 140px;">
+    <section>
+      <div class="badge-tag">PHYSICAL SENSORY COMFORT</div>
+      <h1 class="section-title">LIGHTING & SPATIAL ACOUSTIC ENGINEERING</h1>
+      <p class="section-subtitle">Achieving biological equilibrium through circadian photometric lux and concert-hall acoustic dampening calibrated to RT60 = 0.38 seconds.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 48px 0;">
+        <!-- Lighting Panel -->
+        <div class="glass-panel">
+          <div class="badge-tag">PHOTOMETRIC ENGINE</div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin: 16px 0;">Circadian Lux Engineering</h3>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+            Standard artificial lighting disrupts neurological rhythms. AURA deploys full-spectrum gallium-nitride LEDs 
+            emitting a continuous sunlight spectrum (CRI 98+, R9 > 95), suppressing blue wavelength spike at sunset.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="padding: 14px; background: rgba(255,255,255,0.02); border-radius: 10px; border: 1px solid var(--border-light);">
+              <div style="color: var(--accent-gold); font-family: var(--font-tech); font-size: 1.3rem; font-weight: 700;">2700K - 6500K</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Tunable White Range</div>
+            </div>
+            <div style="padding: 14px; background: rgba(255,255,255,0.02); border-radius: 10px; border: 1px solid var(--border-light);">
+              <div style="color: #fff; font-family: var(--font-tech); font-size: 1.3rem; font-weight: 700;">UGR &lt; 10</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Glare-Free Unified Rating</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Acoustics Panel -->
+        <div class="glass-panel">
+          <div class="badge-tag">ACOUSTIC DAMPING</div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin: 16px 0;">10D Acoustic Decoupling</h3>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+            Urban noise penetration is annihilated via tuned Helmholtz bass resonators and concealed micro-perforated acoustic timber 
+            panelling, bringing background noise down to recording studio criteria (NC-15).
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="padding: 14px; background: rgba(255,255,255,0.02); border-radius: 10px; border: 1px solid var(--border-light);">
+              <div style="color: var(--accent-gold); font-family: var(--font-tech); font-size: 1.3rem; font-weight: 700;">0.38s RT60</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Optimal Reverberation Time</div>
+            </div>
+            <div style="padding: 14px; background: rgba(255,255,255,0.02); border-radius: 10px; border: 1px solid var(--border-light);">
+              <div style="color: #fff; font-family: var(--font-tech); font-size: 1.3rem; font-weight: 700;">NC-15 / 18 dBA</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Ultra-Quiet Floor Level</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-matrix">
+    <div class="footer-bottom" style="border:none;">
+      <div>© 2026 AURA 10D SPATIAL INTERIORS • LIGHTING & ACOUSTICS</div>
+      <a href="index.html" style="color: var(--accent-gold);">Return to 10D Experience ↵</a>
+    </div>
+  </footer>
+
+  <script src="js/audio-10d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

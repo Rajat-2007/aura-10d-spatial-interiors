@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spatial Budget Estimator — AURA 10D Spatial Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/interiors.css">
+</head>
+<body data-lighting="midnight">
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"><span class="cursor-label">CALCULATE</span></div>
+
+  <header class="navbar">
+    <a href="index.html" class="brand-logo" data-cursor-label="HOME">
+      <div class="brand-icon">A</div>
+      <div class="brand-text">AURA <span class="brand-tag">10D SPATIAL</span></div>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="index.html" class="nav-link">Experience</a></li>
+      <li class="nav-item"><a href="living-room.html" class="nav-link">Suites</a></li>
+      <li class="nav-item"><a href="projects-portfolio.html" class="nav-link">Portfolio</a></li>
+      <li class="nav-item"><a href="about-studio.html" class="nav-link">Studio</a></li>
+      <li class="nav-item"><a href="cost-calculator.html" class="nav-link active">Estimator</a></li>
+      <li class="nav-item"><a href="contact-booking.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="hud-btn" id="nav-audio-toggle" data-cursor-label="AUDIO">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg>
+        <span>10D AUDIO</span>
+      </button>
+      <a href="contact-booking.html" class="btn-primary" style="padding: 10px 20px; font-size: 0.78rem;">Book Tour</a>
+    </div>
+  </header>
+
+  <main style="padding-top: 140px;">
+    <section>
+      <div class="badge-tag">FINANCIAL TRANSPARENCY</div>
+      <h1 class="section-title">SPATIAL BUDGET & PROJECT ESTIMATOR</h1>
+      <p class="section-subtitle">Obtain an immediate turnkey investment estimate for full architectural redesign, millwork manufacture, circadian lighting, and 10D acoustic decoupling.</p>
+
+      <div class="glass-panel budget-calculator-box" style="margin-top: 48px;">
+        <div>
+          <!-- Area Slider -->
+          <div class="calc-input-group">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <label class="calc-label">Total Living Area (Square Feet)</label>
+              <span id="calc-area-val" style="color: var(--accent-gold); font-family: var(--font-tech); font-weight: 700;">4,500 sq.ft</span>
+            </div>
+            <input type="range" min="1500" max="15000" value="4500" step="250" class="light-slider" id="calc-area-slider" data-cursor-label="SLIDE">
+          </div>
+
+          <!-- Property Typology -->
+          <div class="calc-input-group">
+            <label class="calc-label">Property Typology</label>
+            <div class="calc-options-grid">
+              <label class="calc-radio-card active">
+                <input type="radio" name="property-type" value="1.0" checked style="display:none;">
+                <strong>Sky Penthouse</strong>
+              </label>
+              <label class="calc-radio-card">
+                <input type="radio" name="property-type" value="1.2" style="display:none;">
+                <strong>Private Villa</strong>
+              </label>
+              <label class="calc-radio-card">
+                <input type="radio" name="property-type" value="0.9" style="display:none;">
+                <strong>Duplex Loft</strong>
+              </label>
+            </div>
+          </div>
+
+          <!-- Material Tier -->
+          <div class="calc-input-group">
+            <label class="calc-label">Material & Millwork Tier</label>
+            <div class="calc-options-grid">
+              <label class="calc-radio-card active">
+                <input type="radio" name="material-tier" value="180" checked style="display:none;">
+                <strong>Platinum</strong>
+                <div style="font-size:0.75rem; color:var(--text-muted);">$180/sq.ft</div>
+              </label>
+              <label class="calc-radio-card">
+                <input type="radio" name="material-tier" value="260" style="display:none;">
+                <strong>Diamond</strong>
+                <div style="font-size:0.75rem; color:var(--text-muted);">$260/sq.ft</div>
+              </label>
+              <label class="calc-radio-card">
+                <input type="radio" name="material-tier" value="380" style="display:none;">
+                <strong>Royal Atelier</strong>
+                <div style="font-size:0.75rem; color:var(--text-muted);">$380/sq.ft</div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Addons -->
+          <div style="display: flex; gap: 24px; margin-top: 24px;">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+              <input type="checkbox" id="calc-smart-toggle" checked> Include 10D Circadian IoT Suite
+            </label>
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+              <input type="checkbox" id="calc-acoustic-toggle" checked> Studio-Grade Sound Isolation
+            </label>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="calc-result-panel">
+          <div>
+            <span class="badge-tag">ESTIMATED INVESTMENT</span>
+            <div class="calc-total-amount" id="calc-total-price">$1,080,000</div>
+            <div style="font-family: var(--font-tech); font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px;">
+              Projected Completion: <span id="calc-timeline" style="color: #fff; font-weight: 600;">22 - 26 Weeks</span>
+            </div>
+            <div id="calc-breakdown" style="margin-bottom: 24px;"></div>
+          </div>
+
+          <button class="btn-primary" id="calc-copy-estimate" style="width: 100%;" data-cursor-label="COPY">Copy Formal Estimate</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-matrix">
+    <div class="footer-bottom" style="border:none;">
+      <div>© 2026 AURA 10D SPATIAL INTERIORS • ESTIMATOR</div>
+      <a href="index.html" style="color: var(--accent-gold);">Return to 10D Experience ↵</a>
+    </div>
+  </footer>
+
+  <script src="js/audio-10d.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

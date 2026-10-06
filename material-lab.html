@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PBR Material & Texture Lab — AURA 10D Spatial Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/interiors.css">
+</head>
+<body data-lighting="midnight">
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"><span class="cursor-label">INSPECT</span></div>
+
+  <header class="navbar">
+    <a href="index.html" class="brand-logo" data-cursor-label="HOME">
+      <div class="brand-icon">A</div>
+      <div class="brand-text">AURA <span class="brand-tag">10D SPATIAL</span></div>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="index.html" class="nav-link">Experience</a></li>
+      <li class="nav-item"><a href="living-room.html" class="nav-link">Suites</a></li>
+      <li class="nav-item"><a href="smart-home.html" class="nav-link">Smart IoT</a></li>
+      <li class="nav-item"><a href="material-lab.html" class="nav-link active">Material Lab</a></li>
+      <li class="nav-item"><a href="furniture-collection.html" class="nav-link">Furniture</a></li>
+      <li class="nav-item"><a href="cost-calculator.html" class="nav-link">Estimator</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="hud-btn" id="nav-audio-toggle" data-cursor-label="AUDIO">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg>
+        <span>10D AUDIO</span>
+      </button>
+      <a href="contact-booking.html" class="btn-primary" style="padding: 10px 20px; font-size: 0.78rem;">Book Tour</a>
+    </div>
+  </header>
+
+  <main style="padding-top: 140px;">
+    <section>
+      <div class="badge-tag">SURFACE SCIENCE & OPTICS</div>
+      <h1 class="section-title">PBR MATERIAL & TEXTURE LAB</h1>
+      <p class="section-subtitle">A curated repository of tactile luxury surfaces. Each material is photometrically calibrated with 8K displacement, micro-facet roughness, and index of refraction.</p>
+
+      <div class="material-lab-grid" style="margin-top: 48px;">
+        <!-- Card 1 -->
+        <div class="material-card tilt-card">
+          <div class="material-sphere mat-calacatta">
+            <div class="sphere-specular"></div>
+          </div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.25rem;">Calacatta Viola Marble</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Quarried in Apuan Alps, Italy. Honed silk texture with deep burgundy breccia veining.</p>
+          <div style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--accent-gold);">ROUGHNESS: 0.08 • IOR: 1.54 • HARDNESS: 3.5 MOHS</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="material-card tilt-card">
+          <div class="material-sphere mat-brass">
+            <div class="sphere-specular"></div>
+          </div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.25rem;">Champagne Brushed Brass</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Electro-plated architectural alloy with linear satin brush and anti-fingerprint ceramic seal.</p>
+          <div style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--accent-gold);">METALLIC: 0.95 • ANISOTROPY: 0.75 • PATINA: STABLE</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="material-card tilt-card">
+          <div class="material-sphere mat-oak">
+            <div class="sphere-specular"></div>
+          </div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.25rem;">Smoked European Oak</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Fumed French white oak treated with organic tannic acids for rich charcoal-brown warmth.</p>
+          <div style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--accent-gold);">ROUGHNESS: 0.65 • MOISTURE: 7% • PEFC CERTIFIED</div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="material-card tilt-card">
+          <div class="material-sphere mat-glass">
+            <div class="sphere-specular"></div>
+          </div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.25rem;">Fluted Acoustic Glass</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Low-iron extra-clear monolithic architectural glass with 12mm fluted sound-deflection ribs.</p>
+          <div style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--accent-gold);">TRANSMISSION: 91% • STC RATING: 42 • LOW-E COATED</div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="material-card tilt-card">
+          <div class="material-sphere mat-carbon">
+            <div class="sphere-specular"></div>
+          </div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.25rem;">Matte Carbon Fiber</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">3K twill dry-carbon pre-preg autoclaved at 7 bar for maximum structural rigidity and featherweight.</p>
+          <div style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--accent-gold);">DENSITY: 1.55 g/cm³ • STRENGTH: 4.8 GPa • AEROSPACE</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-matrix">
+    <div class="footer-bottom" style="border:none;">
+      <div>© 2026 AURA 10D SPATIAL INTERIORS • PBR MATERIAL LAB</div>
+      <a href="index.html" style="color: var(--accent-gold);">Return to 10D Experience ↵</a>
+    </div>
+  </footer>
+
+  <script src="js/audio-10d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

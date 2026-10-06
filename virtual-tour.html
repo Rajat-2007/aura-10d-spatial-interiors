@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10D VR Walkthrough — AURA Spatial Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/interiors.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body data-lighting="midnight" style="overflow: hidden;">
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"><span class="cursor-label">LOOK 360</span></div>
+
+  <!-- Minimal VR Header -->
+  <header class="navbar" style="top: 15px; width: calc(100% - 32px); height: 60px;">
+    <a href="index.html" class="brand-logo" data-cursor-label="EXIT">
+      <div class="brand-icon">A</div>
+      <div class="brand-text">AURA <span class="brand-tag">VR MODE</span></div>
+    </a>
+
+    <!-- Room Switcher Pills -->
+    <div style="display: flex; gap: 8px;">
+      <button class="jump-node active" id="vr-room-salon">Salon</button>
+      <button class="jump-node" id="vr-room-master">Master Suite</button>
+      <button class="jump-node" id="vr-room-kitchen">Culinary</button>
+      <button class="jump-node" id="vr-room-terrace">Sky Terrace</button>
+    </div>
+
+    <div class="nav-actions">
+      <button class="hud-btn" id="nav-audio-toggle" data-cursor-label="AUDIO">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg>
+        <span>10D SOUND</span>
+      </button>
+      <a href="index.html" class="btn-glass" style="padding: 8px 18px; font-size: 0.75rem;">Exit VR ✕</a>
+    </div>
+  </header>
+
+  <!-- Fullscreen 360 WebGL Panorama Canvas -->
+  <div style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1;">
+    <canvas id="panorama-canvas" style="width: 100%; height: 100%; cursor: grab;" data-cursor-label="DRAG 360"></canvas>
+  </div>
+
+  <!-- Bottom Floating VR HUD Control Dock -->
+  <div style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; gap: 16px; background: rgba(10,14,23,0.85); backdrop-filter: blur(25px); border: 1px solid var(--border-gold); padding: 10px 28px; border-radius: 40px; box-shadow: var(--shadow-luxe);">
+    <div style="font-family: var(--font-tech); font-size: 0.78rem; color: var(--accent-gold); letter-spacing: 1.5px; display: flex; align-items: center; gap: 8px;">
+      <span class="pulse-dot"></span> 10D IMMERSION: DRAG MOUSE TO LOOK AROUND
+    </div>
+    <div style="height: 16px; width: 1px; background: var(--border-light);"></div>
+    <div style="display: flex; gap: 8px;">
+      <button class="pano-zoom-btn" id="pano-zoom-in" title="Zoom In">+</button>
+      <button class="pano-zoom-btn" id="pano-zoom-out" title="Zoom Out">−</button>
+    </div>
+  </div>
+
+  <script src="js/panorama.js"></script>
+  <script src="js/audio-10d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

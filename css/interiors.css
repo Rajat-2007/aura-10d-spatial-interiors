@@ -1,0 +1,901 @@
+/* ==========================================================================
+   INTERIORS CSS — 10D SPATIAL INTERACTION MODULES
+   ========================================================================== */
+
+/* 1. HERO 10D SPATIAL ROOM VIEWPORT */
+.hero-viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 750px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  max-width: 100%;
+}
+
+#three-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  outline: none;
+}
+
+.hero-overlay-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 110px 48px 40px;
+}
+
+.hero-overlay-hud * {
+  pointer-events: auto;
+}
+
+.hero-header-content {
+  max-width: 720px;
+}
+
+.hero-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6.5vw, 5.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin: 18px 0;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.hero-main-title span.gold-gradient {
+  background: linear-gradient(135deg, #fff 20%, var(--accent-gold) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 580px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* 3D Viewport Controls & HUD Right Panel */
+.hero-hud-right {
+  position: absolute;
+  right: 48px;
+  top: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 15;
+}
+
+.hud-panel {
+  background: rgba(10, 14, 23, 0.75);
+  backdrop-filter: blur(25px);
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.hud-stat-title {
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 6px;
+}
+
+.hud-stat-val {
+  font-family: var(--font-tech);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hud-stat-val small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Lighting Controls floating dock */
+.lighting-dock {
+  display: flex;
+  background: rgba(10, 14, 23, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-light);
+  border-radius: 30px;
+  padding: 6px;
+  gap: 6px;
+}
+
+.lighting-pill {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lighting-pill:hover, .lighting-pill.active {
+  background: var(--accent-gold);
+  color: #07090e;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(229, 185, 111, 0.4);
+}
+
+/* Fast Spatial Room Jump Bar */
+.spatial-fast-jumper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+  max-width: 900px;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.spatial-fast-jumper::-webkit-scrollbar {
+  display: none;
+}
+
+.jump-node {
+  background: rgba(15, 20, 30, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 10px 18px;
+  font-family: var(--font-tech);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jump-node:hover, .jump-node.active {
+  border-color: var(--accent-gold);
+  color: #fff;
+  background: rgba(229, 185, 111, 0.15);
+  box-shadow: var(--glow-gold);
+}
+
+.jump-node.active::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+}
+
+/* 2. 360 PANORAMIC ROOM EXPLORER */
+.panorama-wrapper {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-luxe);
+}
+
+#panorama-canvas {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+#panorama-canvas:active {
+  cursor: grabbing;
+}
+
+.panorama-controls {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-light);
+  border-radius: 40px;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  z-index: 10;
+}
+
+.pano-hint {
+  font-family: var(--font-tech);
+  font-size: 0.78rem;
+  color: var(--accent-gold);
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pano-zoom-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-light);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.pano-zoom-btn:hover {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+/* 3. LIGHTING & AMBIENCE STUDIO */
+.lighting-studio-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.lighting-preview-box {
+  position: relative;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.lighting-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease;
+}
+
+.lighting-controls-card {
+  padding: 36px;
+}
+
+.light-slider-group {
+  margin-bottom: 28px;
+}
+
+.light-slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-tech);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.light-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.light-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--accent-gold);
+}
+
+.light-color-swatches {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.swatch-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.swatch-btn:hover, .swatch-btn.active {
+  transform: scale(1.15);
+  border-color: #fff;
+  box-shadow: 0 0 15px currentColor;
+}
+
+/* 4. HORIZONTAL MOUSE-SCROLL ROOM MATRIX (LEFT-TO-RIGHT) */
+.horizontal-scroll-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.horizontal-track-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  padding: 30px 48px;
+  scrollbar-width: none;
+}
+
+.horizontal-track-container::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-track-container:active {
+  cursor: grabbing;
+}
+
+.horizontal-room-track {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+}
+
+.horizontal-room-card {
+  width: 480px;
+  height: 600px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.4s var(--ease-smooth), border-color 0.4s, box-shadow 0.4s;
+}
+
+.horizontal-room-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-luxe), var(--glow-gold);
+}
+
+.room-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-smooth);
+}
+
+.horizontal-room-card:hover .room-card-img {
+  transform: scale(1.08);
+}
+
+.room-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 36px 30px;
+  background: linear-gradient(0deg, rgba(7, 9, 14, 0.95) 20%, rgba(7, 9, 14, 0.4) 70%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.room-dimension-tag {
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: var(--accent-gold);
+  margin-bottom: 6px;
+}
+
+.room-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.room-card-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font-tech);
+  margin-bottom: 16px;
+}
+
+/* 5. ARCHITECTURAL BLUEPRINTS & 3D WIREFRAME SWITCHER */
+.blueprint-card {
+  position: relative;
+  height: 600px;
+  border-radius: 24px;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  background: #0a0f18;
+}
+
+.blueprint-grid-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.blueprint-mode-switcher {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-light);
+  border-radius: 30px;
+  padding: 6px;
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.blueprint-pin {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(229, 185, 111, 0.2);
+  border: 1px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  font-size: 12px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  animation: pulse-glow 2s infinite;
+  transition: transform 0.2s;
+}
+
+.blueprint-pin:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: var(--accent-gold);
+  color: #000;
+}
+
+.blueprint-pin-tooltip {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 14, 23, 0.95);
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+  padding: 8px 14px;
+  white-space: nowrap;
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  color: #fff;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.blueprint-pin:hover .blueprint-pin-tooltip {
+  opacity: 1;
+}
+
+/* 6. MATERIAL & PBR TEXTURE LAB */
+.material-lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.material-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.material-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-luxe), var(--glow-gold);
+}
+
+.material-sphere {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  box-shadow: inset -10px -10px 30px rgba(0, 0, 0, 0.8), 0 15px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s var(--ease-smooth);
+}
+
+.material-card:hover .material-sphere {
+  transform: scale(1.08) rotate(10deg);
+}
+
+.sphere-specular {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 40px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(8px);
+}
+
+.mat-calacatta { background: linear-gradient(135deg, #eaeaea, #b8b8b8, #ffffff, #8c8c8c); }
+.mat-brass { background: linear-gradient(135deg, #ffd700, #b8860b, #daa520, #8b6508); }
+.mat-oak { background: linear-gradient(135deg, #4a3525, #2c1d11, #5c4033, #1f140b); }
+.mat-carbon { background: radial-gradient(circle, #2b2b2b 10%, #111111 90%); }
+.mat-glass { background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(0,242,254,0.3), rgba(255,255,255,0.1)); }
+
+/* 7. BESPOKE FURNITURE ATELIER */
+.furniture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.furniture-card {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+
+.furniture-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-8px);
+}
+
+.furniture-img-wrapper {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background: #0f141f;
+}
+
+.furniture-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.furniture-card:hover .furniture-img {
+  transform: scale(1.06);
+}
+
+.furniture-content {
+  padding: 24px;
+}
+
+.furniture-price {
+  font-family: var(--font-tech);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+/* 8. SMART HOME IOT AUTOMATION CONSOLE */
+.smart-home-console {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.smart-widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: var(--transition);
+}
+
+.smart-widget:hover {
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-card);
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.widget-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(229, 185, 111, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+}
+
+.toggle-switch {
+  position: relative;
+  width: 52px;
+  height: 28px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-round {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+  border-radius: 28px;
+  border: 1px solid var(--border-light);
+}
+
+.slider-round:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider-round {
+  background-color: var(--accent-gold);
+}
+
+input:checked + .slider-round:before {
+  transform: translateX(24px);
+  background-color: #07090e;
+}
+
+/* 9. 10D SPATIAL ACOUSTIC & SOUND STUDIO */
+.audio-studio-card {
+  padding: 40px;
+  text-align: center;
+}
+
+.audio-visualizer-canvas {
+  width: 100%;
+  height: 140px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-light);
+  margin: 28px 0;
+}
+
+.soundscape-selector {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.soundscape-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: var(--text-main);
+  font-family: var(--font-tech);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.soundscape-btn:hover, .soundscape-btn.active {
+  border-color: var(--accent-gold);
+  background: rgba(229, 185, 111, 0.15);
+  color: var(--accent-gold);
+  box-shadow: var(--glow-gold);
+}
+
+/* 10. BEFORE & AFTER RENOVATION SLIDER */
+.comparison-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-luxe);
+  user-select: none;
+}
+
+.comparison-before, .comparison-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.comparison-before img, .comparison-after img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comparison-before {
+  width: 50%;
+  overflow: hidden;
+  border-right: 2px solid var(--accent-gold);
+  z-index: 5;
+}
+
+.comparison-before img {
+  width: 100vw;
+  max-width: 1440px;
+}
+
+.comparison-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 44px;
+  margin-left: -22px;
+  z-index: 10;
+  cursor: ew-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handle-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  color: #07090e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(229, 185, 111, 0.8);
+}
+
+/* 11. SPATIAL BUDGET CALCULATOR */
+.budget-calculator-box {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+  padding: 40px;
+}
+
+.calc-input-group {
+  margin-bottom: 24px;
+}
+
+.calc-label {
+  display: block;
+  font-family: var(--font-tech);
+  font-size: 0.82rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.calc-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.calc-radio-card {
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  transition: var(--transition);
+}
+
+.calc-radio-card:hover, .calc-radio-card.active {
+  border-color: var(--accent-gold);
+  background: rgba(229, 185, 111, 0.12);
+  color: #fff;
+}
+
+.calc-result-panel {
+  background: rgba(8, 11, 18, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calc-total-amount {
+  font-family: var(--font-tech);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  margin: 12px 0 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .lighting-studio-grid,
+  .budget-calculator-box {
+    grid-template-columns: 1fr;
+  }
+  .hero-hud-right {
+    display: none;
+  }
+  .horizontal-room-card {
+    width: 340px;
+    height: 480px;
+  }
+}

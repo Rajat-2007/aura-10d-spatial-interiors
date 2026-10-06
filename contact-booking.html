@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Consultation & Private Viewing — AURA 10D Spatial Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/interiors.css">
+</head>
+<body data-lighting="midnight">
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"><span class="cursor-label">BOOK VIP</span></div>
+
+  <header class="navbar">
+    <a href="index.html" class="brand-logo" data-cursor-label="HOME">
+      <div class="brand-icon">A</div>
+      <div class="brand-text">AURA <span class="brand-tag">10D SPATIAL</span></div>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="index.html" class="nav-link">Experience</a></li>
+      <li class="nav-item"><a href="living-room.html" class="nav-link">Suites</a></li>
+      <li class="nav-item"><a href="projects-portfolio.html" class="nav-link">Portfolio</a></li>
+      <li class="nav-item"><a href="about-studio.html" class="nav-link">Studio</a></li>
+      <li class="nav-item"><a href="cost-calculator.html" class="nav-link">Estimator</a></li>
+      <li class="nav-item"><a href="contact-booking.html" class="nav-link active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="hud-btn" id="nav-audio-toggle" data-cursor-label="AUDIO">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg>
+        <span>10D AUDIO</span>
+      </button>
+      <a href="index.html" class="btn-primary" style="padding: 10px 20px; font-size: 0.78rem;">Experience ↵</a>
+    </div>
+  </header>
+
+  <main style="padding-top: 140px;">
+    <section>
+      <div class="badge-tag">CONCIERGE & PRIVATE VIEWINGS</div>
+      <h1 class="section-title">VIP CONSULTATION & VR APPOINTMENT</h1>
+      <p class="section-subtitle">Engage our principal architectural directors for private gallery walkthroughs or request an encrypted Apple Vision Pro headset dispatched to your global residence.</p>
+
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; margin: 48px 0;">
+        <!-- Booking Form -->
+        <div class="glass-panel" style="padding: 40px;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 24px;">Private Appointment Request</h3>
+          <form id="vip-booking-form">
+            <div style="margin-bottom: 18px;">
+              <label class="calc-label">Full Name & Title</label>
+              <input type="text" required placeholder="Lord / Lady / Dr. Name" style="width:100%; padding: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-light); border-radius: 10px; color: #fff;">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px;">
+              <div>
+                <label class="calc-label">Private Email / Family Office</label>
+                <input type="email" required placeholder="concierge@office.com" style="width:100%; padding: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-light); border-radius: 10px; color: #fff;">
+              </div>
+              <div>
+                <label class="calc-label">Encrypted Phone / Signal</label>
+                <input type="tel" required placeholder="+1 (555) 019-2834" style="width:100%; padding: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-light); border-radius: 10px; color: #fff;">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px;">
+              <div>
+                <label class="calc-label">Target Residence Location</label>
+                <input type="text" placeholder="Manhattan / Tokyo / Dubai / Zurich" style="width:100%; padding: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-light); border-radius: 10px; color: #fff;">
+              </div>
+              <div>
+                <label class="calc-label">Estimated Floor Area</label>
+                <select style="width:100%; padding: 14px; background: #0c1017; border: 1px solid var(--border-light); border-radius: 10px; color: #fff;">
+                  <option>2,500 – 5,000 sq.ft</option>
+                  <option>5,000 – 10,000 sq.ft</option>
+                  <option>10,000+ sq.ft Sky Villa</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+              <label class="calc-label">Viewing Modality</label>
+              <select style="width:100%; padding: 14px; background: #0c1017; border: 1px solid var(--border-light); border-radius: 10px; color: #fff;">
+                <option>Private Viewing at Tokyo / Manhattan Atelier</option>
+                <option>Courier Delivery of Apple Vision Pro Spatial VR</option>
+                <option>Secure 1-on-1 Spatial Architect Video Session</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%;" data-cursor-label="SUBMIT">SUBMIT PRIVATE RESERVATION</button>
+          </form>
+        </div>
+
+        <!-- Global Ateliers Info -->
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="glass-panel">
+            <span class="badge-tag">TOKYO ATELIER</span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin: 10px 0 4px;">Roppongi Hills Mori Tower</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Level 51, Minato-ku, Tokyo 106-6151 Japan</p>
+          </div>
+
+          <div class="glass-panel">
+            <span class="badge-tag">NEW YORK ATELIER</span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin: 10px 0 4px;">56 Leonard Street Penthouse</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Tribeca, New York, NY 10013 USA</p>
+          </div>
+
+          <div class="glass-panel">
+            <span class="badge-tag">DUBAI ATELIER</span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin: 10px 0 4px;">DIFC Gate Precinct 4</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Level 8, Dubai International Financial Centre, UAE</p>
+          </div>
+
+          <div class="glass-panel">
+            <span class="badge-tag">ZURICH ATELIER</span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin: 10px 0 4px;">Bahnhofstrasse 28</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">8001 Zürich, Switzerland</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-matrix">
+    <div class="footer-bottom" style="border:none;">
+      <div>© 2026 AURA 10D SPATIAL INTERIORS • VIP CONCIERGE</div>
+      <a href="index.html" style="color: var(--accent-gold);">Return to 10D Experience ↵</a>
+    </div>
+  </footer>
+
+  <script src="js/audio-10d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
